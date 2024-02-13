@@ -9,7 +9,7 @@ try:                                                                            
     mycursor = db.cursor()
     def inserting(rankings,series_name,started_year,ratings,lead_actor_name):                                           # Creating function to Insert Data into RDBMS
         mycursor.execute("INSERT INTO series_list_25(rankings, series_name, started_year, ratings, lead_actor_name) VALUES (%s,%s,%s,%s,%s)",
-                         (rankings, series_name, started_year, ratings, lead_actor_name))
+                         (rankings, series_name, started_year, ratings, lead_actor_name))                               # Inserting the values in the Database 
         db.commit()
 
 
@@ -22,7 +22,7 @@ try:                                                                            
     for superior in holder:
         rank = superior.find("div", attrs={"class": "countdown-index"})                                                 # Finding <div> tag with class = countdown-index
         jason = superior.find("div", attrs={"class": "article_movie_title"})                                            # Finding <div> tag with class = article_movie_title
-        name = jason.find("a")                                                                                          # Finding <a>
+        name = jason.find("a")                                                                                          # Finding <a> tag
         year = jason.find("span", attrs={"class": "subtle start-year"})                                                 # Finding <span> tag with class = subtle start-year
         percent = jason.find("span", attrs={"class": "tMeterScore"})                                                    # Finding <div> tag with class = row countdown-item-details
         jimmy = superior.find("div", attrs={"class": "row countdown-item-details"})                                     # Finding <div> tag with class = row countdown-item-details
