@@ -14,7 +14,7 @@ try:                                                                            
 
 
     link = requests.get("https://editorial.rottentomatoes.com/guide/rt25-critics-top-tv-shows-of-the-last-25-years-2/") # Declaring Website link
-    soup = BeautifulSoup(link.text, "html.parser")                                                               # Creating objects for BS4
+    soup = BeautifulSoup(link.text, "html.parser")                                                                      # Creating objects for BS4
     das = soup.body                                                                                                     # Declaring HTML Body part separately into another variable
     holder = das.find_all("div", attrs={"class": "row countdown-item"})                                                 # Finding all <div> tags with class = row countdown-item
 
